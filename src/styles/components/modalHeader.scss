@@ -1,0 +1,16 @@
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  &-title {
+    font-size: 24px;
+  }
+
+  .close-btn {
+    padding: 14px 14px 11px 14px;
+    background-color: $c-bg-gray;
+    border-radius: 100px;
+  }
+}

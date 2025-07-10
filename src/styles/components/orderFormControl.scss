@@ -1,0 +1,32 @@
+.order-form-container {
+  margin-bottom: 16px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .form-input {
+      padding: 15px 16px 18px;
+      margin-bottom: 10px;
+      width: 100%;
+      border: 1px solid $c-input-border;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: $c-black;
+    }
+
+    .form-field {
+      position: relative;
+      width: 100%;
+
+      .delivery-date-input {
+        width: 100%;
+      }
+
+      .delivery-date-input label {
+        position: absolute;
+      }
+    }
+  }
+}

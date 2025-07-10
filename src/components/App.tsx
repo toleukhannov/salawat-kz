@@ -1,20 +1,46 @@
-import { useState } from 'react';
+// libraries
+import { type FC, useEffect, useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { registerLocale } from 'react-datepicker';
+import { useDispatch, useSelector } from 'react-redux';
+import ru from 'date-fns/locale/ru';
+// components
+import HomePage from 'components/HomePage';
+import OrderScreen from 'components/OrderScreen';
+import CartButton from 'components/CartButton';
+import { useModal } from '../hooks/useModal';
+// redux
+import { initializeCart, selectCartIsEmpty } from 'store/slices/cartSlice';
 
-function App() {
-  const [count, setCount] = useState(0);
+registerLocale('ru', ru);
+
+const App: FC = () => {
+  const dispatch = useDispatch();
+  const [isOrderOpen, setIsOrderOpen] = useState(false);
+
+  const isCartEmpty = useSelector(selectCartIsEmpty);
+
+  useModal(isOrderOpen, () => setIsOrderOpen(false));
+
+  useEffect(() => {
+    dispatch(initializeCart());
+  }, [dispatch]);
+
+  const handleOpenOrder = () => {
+    setIsOrderOpen(true);
+  };
+
+  const handleCloseOrder = () => {
+    setIsOrderOpen(false);
+  };
 
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+    <BrowserRouter>
+      <HomePage />
+      {!isCartEmpty && <CartButton onOpenOrder={handleOpenOrder} />}
+      {isOrderOpen && <OrderScreen onClose={handleCloseOrder} />}
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,71 @@
+/* Минимальный глобальный сброс — только box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Удаляем отступы и поля у body и некоторых html5-элементов */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, figure,
+dl, dd, ul, ol, pre, form, fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* Убираем стили списков */
+ul, ol {
+  list-style: none;
+}
+
+/* Обнуляем стили ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Наследуем шрифты и убираем оформление у интерактивных элементов */
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Таблицы */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* HTML5 display fix */
+article, aside, details, figcaption, figure,
+footer, header, main, nav, section, summary {
+  display: block;
+}
+
+/* Убираем quote-стили */
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+}
+
+/* Общее */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+button{
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+}

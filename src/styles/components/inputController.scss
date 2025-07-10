@@ -1,0 +1,87 @@
+.inp {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  min-height: 74px;
+  width: 100%;
+  border: 1px solid $c-input-border;
+  border-radius: 10px;
+  overflow: hidden;
+
+  resize: vertical;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+
+  input {
+    width: 100%;
+    border: none;
+    padding: 22px 16px 11px;
+    height: 56px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-black;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+  }
+
+  .label {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    font-size: 14px;
+    color: $c-label;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+
+  input:focus ~ .label,
+  input:not(:placeholder-shown) ~ .label {
+    font-size: 12px;
+    transform: translate3d(0, -12px, 0);
+  }
+
+  textarea {
+    width: 100%;
+    border: none;
+    padding: 22px 16px 11px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-black;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 56px;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+  }
+
+  textarea:focus ~ .label,
+  textarea:not(:placeholder-shown) ~ .label {
+    font-size: 12px;
+    transform: translate3d(0, -12px, 0);
+  }
+
+  .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.1s ease;
+  }
+
+  input:focus ~ .focus-bg {
+    transform: scaleX(1);
+  }
+}

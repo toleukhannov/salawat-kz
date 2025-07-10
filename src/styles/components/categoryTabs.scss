@@ -1,0 +1,17 @@
+.category-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: $c-white;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  top: -20px;
+  margin-bottom: -20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+.quantity-control {
+  display: flex;
+  align-items: center;
+  background-color: $c-card-img-bg;
+  border-radius: 5.75px;
+
+  .count {
+    font-weight: 500;
+    padding: 10px 12px;
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .count-btn {
+    @extend .count;
+    font-size: 15px;
+  }
+}
+
+.quantity-card {
+  color: $c-white;
+  background-color: $c-accent-color;
+
+  .count {
+    font-size: 16px;
+  }
+
+  .count-btn {
+    font-size: 22px;
+    padding: 4px 19px;
+  }
+}

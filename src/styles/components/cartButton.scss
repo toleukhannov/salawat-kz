@@ -1,0 +1,26 @@
+.cart-btn-wrapper {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  z-index: 1;
+}
+
+.to-cart-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   gap: 7px;
+   padding: 17px;
+   border-radius: 20px;
+   color: $c-white;
+   stroke: $c-white;
+   fill: $c-white;
+   font-weight: 600;
+   font-size: 16px;
+   background-color: $c-accent-color;
+
+   &:hover {
+     background-color: darken($c-accent-color, 10%);
+   }
+ }

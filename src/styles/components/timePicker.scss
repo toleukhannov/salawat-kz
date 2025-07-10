@@ -1,0 +1,42 @@
+.time-select {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 1px solid $c-input-border;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  select {
+    width: 100%;
+    border: none;
+    padding: 22px 16px 11px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-black;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .label {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    font-size: 14px;
+    color: $c-label;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+
+  select:focus ~ .label,
+  select:not([value=""]) ~ .label {
+    font-size: 12px;
+    transform: translate3d(0, -12px, 0);
+  }
+}

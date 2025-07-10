@@ -1,0 +1,40 @@
+.order-list {
+  margin-bottom: 25px;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    &:not(:last-child) {
+    padding-bottom: 17px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $c-input-border;
+    }
+
+    .item-image {
+      max-width: 40px;
+      max-height: 40px;
+      object-fit: cover;
+      background-color: $c-card-img-bg;
+      border-radius: 10px;
+    }
+
+    .item-details {
+      &-title {
+        font-size: 14px;
+      }
+
+      &-price {
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+.order-list-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

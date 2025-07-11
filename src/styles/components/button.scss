@@ -13,3 +13,20 @@
   background-color: colors.$c-to-cart-button-bg;
   font-weight: 600;
 }
+
+.category-btn {
+  padding: 5px 14px;
+  color: colors.$c-disabled-text;
+  font-weight: 400;
+  flex: 0 0 auto;
+
+  &-active {
+    background-color: colors.$c-active-category-bg;
+    border-radius: 7px;
+    font-weight: 500;
+    color: colors.$c-black;
+  }
+}
+.category-btn-active {
+  font-weight: 500;
+}

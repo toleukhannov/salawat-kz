@@ -1,0 +1,25 @@
+@use "./../settings/colors";
+
+.card {
+  max-width: 172px;
+
+  &-img {
+    width: 100%;
+    height: 134px;
+    border-radius: 7px;
+    margin-bottom: 9px;
+    background-color: colors.$c-card-img-bg;
+  }
+
+  &-price {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+
+  &-title {
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 13px;
+  }
+}

@@ -1,10 +1,9 @@
-// settings
-
-// mixins
-
 // generic
 @import "generic/base";
 @import "generic/reset";
+
+// objects
+@import "objects/container";
 
 // elements
 @import "components/button";
@@ -12,3 +11,7 @@
 // components
 
 @import "components/header";
+@import "components/banner";
+@import "components/categoryTabs";
+@import "components/productsList";
+@import "components/productListItem";

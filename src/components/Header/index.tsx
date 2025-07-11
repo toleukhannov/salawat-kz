@@ -2,7 +2,8 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 // components
-import Card from 'components/Card';
+// import ProductCard from 'components/ProductCard';
+import Banner from 'components/Banner';
 // static
 import LogotypeSvg from 'assets/icons/logo.svg?react';
 import profileImg from 'assets/icons/profile.svg';
@@ -10,14 +11,15 @@ import profileImg from 'assets/icons/profile.svg';
 const Header: FC = () => {
   return (
     <header className="header">
-      <nav className="nav-container">
-        <LogotypeSvg />
-        <Link to={'/profile'}>
+      <nav className="container nav-container">
+        <Link to={"/"}><LogotypeSvg className="logo"/></Link>
+        <Link className="profile-link" to={'/profile'}>
           <img alt="Профиль" src={profileImg} />
-          <span>Войти</span>
+          <span>Нурболат</span>
         </Link>
       </nav>
-      <Card></Card>
+      <Banner/>
+      {/*<ProductCard></ProductCard>*/}
     </header>
   );
 };

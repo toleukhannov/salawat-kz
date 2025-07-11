@@ -1,0 +1,15 @@
+@use "./../settings/colors";
+
+.button {
+  padding: 11px 41px;
+  font-size: 14px;
+}
+
+.shopping-btn {
+  display: flex;
+  align-content: center;
+  gap: 8px;
+  border-radius: 5.75px;
+  background-color: colors.$c-to-cart-button-bg;
+  font-weight: 600;
+}

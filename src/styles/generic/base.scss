@@ -1,4 +1,8 @@
+@use "./../settings/variables" as vars;
+@use "./../settings/colors";
+
 body {
-  font-family: $font-family-primary;
+  font-family: vars.$font-family-primary;
   margin: 0;
+  background-color: colors.$c-black-transparent;
 }

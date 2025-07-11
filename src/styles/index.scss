@@ -1,7 +1,4 @@
 // settings
-@import "settings/colors";
-@import "@styles/settings/fonts";
-@import "settings/variables";
 
 // mixins
 
@@ -10,5 +7,8 @@
 @import "generic/reset";
 
 // elements
+@import "components/button";
 
 // components
+
+@import "components/header";

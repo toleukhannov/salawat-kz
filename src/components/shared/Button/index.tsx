@@ -1,8 +1,10 @@
-import React, { type FC } from 'react';
+// libraries
+import { type FC, type ReactNode } from 'react';
 
 type ButtonProps = {
   subClass?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
+  onClick?: () => void;
 };
 
 const Button: FC<ButtonProps> = ({ subClass, children }) => {

@@ -1,11 +1,9 @@
-@use './../settings/colors';
-
 .category-tabs {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  background-color: colors.$c-white;
+  background-color: $c-white;
   border-radius: 20px 20px 0 0;
   position: relative;
   top: -20px;

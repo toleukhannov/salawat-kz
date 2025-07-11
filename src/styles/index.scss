@@ -1,3 +1,8 @@
+// settings
+@import "settings/colors";
+@import "@styles/settings/fonts";
+@import "settings/variables";
+
 // generic
 @import "generic/base";
 @import "generic/reset";
@@ -15,3 +20,4 @@
 @import "components/categoryTabs";
 @import "components/productsList";
 @import "components/productListItem";
+@import "components/modalHeader";

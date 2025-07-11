@@ -1,13 +1,35 @@
-import React from 'react';
-import { categoryTabs } from './config';
-import Button from '../shared/Button';
+// libraries
+import { type FC, useState } from 'react';
+//components
+// rtk query
+import { useGetCategoriesQuery } from 'store/services/category/categoryApi';
 
-const CategoryTabs = () => {
+type CategoryTabsProps = {
+  onSelect: (id: string) => void;
+};
+
+const CategoryTabs: FC<CategoryTabsProps> = ({ onSelect }) => {
+  const { data: categories = [], isLoading, isError } = useGetCategoriesQuery();
+  const [activeId, setActiveId] = useState<string | null>('c1af01bc-2123-4d55-b5e2-4d02c8c9bc33');
+
+  if (isLoading) return <div>Загрузка...</div>;
+  if (isError) return <div>Ошибка загрузки категорий</div>;
+
+  const handleClick = (id: string) => {
+    setActiveId(id);
+    onSelect(id);
+  };
+
   return (
     <div className="container category-tabs">
-      <Button subClass={"category-btn category-btn-active"} >Акции</Button>
-      {categoryTabs.map((category) => (
-        <Button subClass={"category-btn"} key={category}>{category}</Button>
+      {categories.map((category) => (
+        <button
+          className={`category-btn ${activeId === category.uuid ? 'category-btn-active' : ''}`}
+          key={category.uuid}
+          onClick={() => handleClick(category.uuid)}
+        >
+          {category.name}
+        </button>
       ))}
     </div>
   );

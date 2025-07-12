@@ -4,6 +4,8 @@ import type { FC } from 'react';
 import ShoppingIcon from 'assets/icons/shopping.svg?react';
 // utilities
 import { addToCart } from 'utilities/cartStorage';
+//helpers
+import { formatPrice } from 'helpers/formatPrice';
 
 type ProductsListItemProps = {
   id: number;
@@ -22,7 +24,7 @@ const ProductsListItem: FC<ProductsListItemProps> = ({ imgUrl, price, name, item
     <div className="card">
       <div>
         <img alt="Изображение товара" className="card-img" src={imgUrl} />
-        <p className="card-price">{price.toLocaleString('ru-RU')}₸</p>
+        <p className="card-price">{formatPrice(price)}</p>
         <p className="card-title">{name}</p>
       </div>
       <button className={'button shopping-btn'} onClick={handleAdd}>

@@ -1,15 +1,31 @@
 // libraries
-import type { FC } from 'react';
-// components
-import Button from 'components/shared/Button';
+import { type FC, useEffect, useState } from 'react';
 // static
-import ShoppingIcon from 'assets/icons/shopping.svg?react';
+import ShoppingIcon from 'assets/icons/shoppingFilled.svg?react';
+import { getCart } from '../../utilities/cartStorage';
 
-const CartButton: FC<{}> = () => {
+const CartButton: FC = () => {
+  const [totalQty, setTotalQty] = useState(0);
+
+  useEffect(() => {
+    const update = () => {
+      const cart = getCart();
+      const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+      setTotalQty(total);
+    };
+
+    update();
+
+    window.addEventListener('cart-updated', update);
+    return () => window.removeEventListener('cart-updated', update);
+  }, []);
+
   return (
-    <Button subClass="to-cart-btn">
-      <ShoppingIcon />В корзину - 5 000
-    </Button>
+    <div className="container cart-btn-wrapper">
+      <button className="to-cart-btn">
+        <ShoppingIcon />В корзину - {totalQty}
+      </button>
+    </div>
   );
 };
 

@@ -13,8 +13,8 @@
 ## ⚙️ Установка
 
 ```bash
-git clone https://github.com/your-username/salawat-delivery.git
-cd salawat-delivery
+git clone https://github.com/toleukhannov/salawat-kz.git
+cd salawat-kz
 npm install
 ```
 

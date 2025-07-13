@@ -1,4 +1,4 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC } from 'react';
 
 type QuantityControlProps = {
   quantity: number;
@@ -13,21 +13,8 @@ const QuantityControl: FC<QuantityControlProps> = ({
   onDecrease,
   subClass,
 }) => {
-  const [qt, setQt] = useState(quantity);
-
-  useEffect(() => {
-    const updateQt = () => {
-      setQt(qt + 1);
-    };
-
-    window.addEventListener('cart-updated', updateQt);
-
-    return () => {
-      window.removeEventListener('cart-updated', updateQt);
-    };
-  }, []);
   return (
-    <div className={`quantity-control ${subClass}`}>
+    <div className={`quantity-control ${subClass || ''}`}>
       <button className="count-btn" onClick={onDecrease}>
         -
       </button>
@@ -38,4 +25,5 @@ const QuantityControl: FC<QuantityControlProps> = ({
     </div>
   );
 };
+
 export default QuantityControl;
